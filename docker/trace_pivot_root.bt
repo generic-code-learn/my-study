@@ -1,0 +1,8 @@
+#!/usr/bin/env bpftrace
+
+tracepoint:syscalls:sys_enter_pivot_root
+{
+    printf("pivot_root called:\n");
+    printf("  new_root: %s\n", str(args->new_root));
+    printf("  put_old: %s\n", str(args->put_old));
+}
