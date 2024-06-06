@@ -1,8 +1,5 @@
 #!/usr/bin/env bpftrace
 
-# 查看参数
-# bpftrace -lv tracepoint:syscalls:sys_enter_mount
-
 tracepoint:syscalls:sys_enter_mount
 {
     printf("mount(dev_name: %s, dir_name: %s, type: %s, flags: %d)\n",
